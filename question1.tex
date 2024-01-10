@@ -1,6 +1,6 @@
 \let\negmedspace\undefined
 \let\negthickspace\undefined
-\documentclass[journal,12pt,onecolumn]{IEEEtran}
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
 \usepackage{algorithmic}
@@ -25,7 +25,7 @@
 \usepackage{hhline}                                           
 \usepackage{ifthen}                                           
 \usepackage{lscape}
-
+\usepackage{caption}
 
 
 \newtheorem{theorem}{Theorem}[section]
@@ -119,6 +119,7 @@
 \title{Assignment}
 \author{EE23BTECH11001 - Aashna Sahu}
 \maketitle
+\newpage
 \bigskip
 
 \renewcommand{\thefigure}{\theenumi}
@@ -131,9 +132,9 @@ Let nth term of given AP be $x(n)$
 
 Given:\\
 
-First term,$a_0=11$ and Common difference,$d= -3$\\
+First term,$x(0)=11$ and Common difference,$d= -3$\\
 \[\begin{aligned}
-x(n)&=a_0+nd\\
+x(n)&=x(0)+nd\\
 x(n)&=11+n(-3)\\
 x(n)&= 11-3n\\
 \end{aligned}\]
@@ -148,7 +149,6 @@ n&=161/3\\
 Here $n \notin N$\\
 \end{center}
 Thus -150 is not a term of the given AP.
-
 \begin{align}
  \boxed{x(n)=(11-3n)\times u(n)}   
 \end{align}
@@ -158,22 +158,39 @@ The expression for u(n) is
     1 & \text{if } n \geq 0, \\
     0 & \text{if } n < 0.
 \end{cases} \]
+On Z-transformation
+\[\begin{aligned}
+U(z)&=\sum\limits_{n=-\infty}^{\infty}z^{-n}u(n)\\
+U(z)&=\sum\limits_{n=0}^{\infty}z^{-n}\\
+\frac{d(U(z))}{dz}&=\sum\limits_{n=0}^{\infty}-nz^{-n-1}\\
+\end{aligned}\]
+Now,
 \[\begin{aligned}
    X(z)&=\sum\limits_{n=-\infty}^{\infty}(11-3n)z^{-n}u(n)\\
    X(z)&=\sum\limits_{n=-\infty}^{0}(11-3n)\times0 +\sum\limits_{n=0}^{\infty}(11z^{-n}-3nz^{-n})\times1\\
-   X(z)&=11(z^{0}+z^{-1}+z^{-2}+....)-3(0+z^{-1}+2z^{-2}+3z^{-3}+...)\\
-   X(z)&=11\left(\frac{1-z^{-n}}{1-z^{-1}}\right)-3\left(\frac{z^{-1}(1-z^{-n})}{(1-z^{-1})^2}\right)\\
-   X(z)&=11u(z)-3\left(-z\frac{d(u(z))}{dz}\right)\\
+   X(z)&=11\sum\limits_{n=0}^{\infty}z^{-n}-3\sum\limits_{n=0}^{\infty}nz^{-n}\\
+   X(z)&=11U(z)-3\left(-z\frac{d(U(z))}{dz}\right)\\
+   X(z)&=\frac{11}{1-z^{-1}}-\frac{3z^{-1}}{(1-z^{-1})^2}\hspace{5pt}
+   \text{ROC: $|z|>1$}
 \end{aligned}\]
+
 \begin{align}
- \boxed{X(z)=11u(z)+3z\frac{d(u(z))}{dz}}  
+ \boxed{X(z)=11U(z)+3z\frac{d(U(z))}{dz}}  
 \end{align}
-    \begin{table}[ht]
+    \begin{table}[h]
     \centering
     
         \input{tables/table1}\\
         
-    \caption{input parameters}
+    \caption{Input parameters}
     \label{Table 1}
 \end{table}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.45\textwidth]{figs/Figure_1.png}\\
+  \captionsetup {justification=centering}
+  \caption{Representation of x(n)}
+  \label{Figure_1}
+\end{figure}
 \end{document}
