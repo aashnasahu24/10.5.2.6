@@ -166,17 +166,18 @@ U(z)&=\sum\limits_{n=0}^{\infty}z^{-n}\\
 \end{aligned}\]
 Now,
 \[\begin{aligned}
-   X(z)&=\sum\limits_{n=-\infty}^{\infty}(11-3n)z^{-n}u(n)\\
-   X(z)&=\sum\limits_{n=-\infty}^{0}(11-3n)\times0 +\sum\limits_{n=0}^{\infty}(11z^{-n}-3nz^{-n})\times1\\
-   X(z)&=11\sum\limits_{n=0}^{\infty}z^{-n}-3\sum\limits_{n=0}^{\infty}nz^{-n}\\
+   X(z)&=\sum\limits_{n=-\infty}^{\infty}(x(0)+nd)z^{-n}u(n)\\
+\end{aligned}\]
+\begin{align}
+ \boxed{X(z)=x(0)U(z)-dz\frac{d(U(z))}{dz}}  
+\end{align}
+\[\begin{aligned}
    X(z)&=11U(z)-3\left(-z\frac{d(U(z))}{dz}\right)\\
    X(z)&=\frac{11}{1-z^{-1}}-\frac{3z^{-1}}{(1-z^{-1})^2}\hspace{5pt}
    \text{ROC: $|z|>1$}
 \end{aligned}\]
 
-\begin{align}
- \boxed{X(z)=11U(z)+3z\frac{d(U(z))}{dz}}  
-\end{align}
+
     \begin{table}[h]
     \centering
     
