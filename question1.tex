@@ -1,6 +1,6 @@
 \let\negmedspace\undefined
 \let\negthickspace\undefined
-\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\documentclass[journal,12pt,onecolumn]{IEEEtran}
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
 \usepackage{algorithmic}
@@ -119,7 +119,6 @@
 \title{Assignment}
 \author{EE23BTECH11001 - Aashna Sahu}
 \maketitle
-\newpage
 \bigskip
 
 \renewcommand{\thefigure}{\theenumi}
@@ -133,50 +132,36 @@ Let nth term of given AP be $x(n)$
 Given:\\
 
 First term,$x(0)=11$ and Common difference,$d= -3$\\
-\[\begin{aligned}
+\begin{align}
 x(n)&=x(0)+nd\\
-x(n)&=11+n(-3)\\
-x(n)&= 11-3n\\
-\end{aligned}\]
-
-Now, we need to check if -150 is a term of the given AP.\\
-\[\begin{aligned}
--150&= 11-3n\\
-3n&=161\\
-n&=161/3\\
-\end{aligned}\]
+n&=\frac{x(n)-x(0)}{d}
+\end{align}
 \begin{center}
-Here $n \notin N$\\
+For $n \in N$
+\end{center}
+\begin{align}
+x(n)-x(0) &\equiv 0 \pmod{d}
+\end{align}
+On substitutings values\\
+\begin{align}
+-161 &\equiv 2 \pmod{-3}
+\end{align}
+\begin{center}
+As $n \notin N$\\
 \end{center}
 Thus -150 is not a term of the given AP.
 \begin{align}
  \boxed{x(n)=(11-3n)\times u(n)}   
 \end{align}
 
-The expression for u(n) is 
-\[ u(n) = \begin{cases}
-    1 & \text{if } n \geq 0, \\
-    0 & \text{if } n < 0.
-\end{cases} \]
-On Z-transformation
-\[\begin{aligned}
-U(z)&=\sum\limits_{n=-\infty}^{\infty}z^{-n}u(n)\\
-U(z)&=\sum\limits_{n=0}^{\infty}z^{-n}\\
-\frac{d(U(z))}{dz}&=\sum\limits_{n=0}^{\infty}-nz^{-n-1}\\
-\end{aligned}\]
-Now,
-\[\begin{aligned}
-   X(z)&=\sum\limits_{n=-\infty}^{\infty}(x(0)+nd)z^{-n}u(n)\\
-\end{aligned}\]
 \begin{align}
  \boxed{X(z)=x(0)U(z)-dz\frac{d(U(z))}{dz}}  
 \end{align}
-\[\begin{aligned}
+\begin{align}
    X(z)&=11U(z)-3\left(-z\frac{d(U(z))}{dz}\right)\\
    X(z)&=\frac{11}{1-z^{-1}}-\frac{3z^{-1}}{(1-z^{-1})^2}\hspace{5pt}
    \text{ROC: $|z|>1$}
-\end{aligned}\]
-
+\end{align}
 
     \begin{table}[h]
     \centering
@@ -186,10 +171,10 @@ Now,
     \caption{Input parameters}
     \label{Table 1}
 \end{table}
-
-\begin{figure}[ht]
+\newpage
+\begin{figure}[h]
   \centering
-  \includegraphics[width=0.45\textwidth]{figs/Figure_1.png}\\
+  \includegraphics[width=1.2\textwidth]{figs/Figure_1.png}\\
   \captionsetup {justification=centering}
   \caption{Representation of x(n)}
   \label{Figure_1}
