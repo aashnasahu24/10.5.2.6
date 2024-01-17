@@ -4,8 +4,4 @@
       $x(0)$ & First term of AP & 11\\\hline
       $d$ & Common difference & -3\\\hline
       $x(n)$ & General term of given AP & None\\\hline
-      $n$ & Describing the order of term & None\\\hline
-      $u(n)$ & Unit Step Functions & Mentioned above\\\hline
-      $U(z)$ & Z-transform of u(n) & $\sum\limits_{n=0}^{n=\infty}z^{-n}$\\\hline
-      $X(z)$ & Z-transform of x(n) & None\\\hline
       \end{tabular}
