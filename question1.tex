@@ -127,18 +127,11 @@
 Q:Check whether -150 is a term of the AP: 11,8,5,2,....
 
  \solution
-Let nth term of given AP be $x(n)$
 
-Given:\\
-
-First term,$x(0)=11$ and Common difference,$d= -3$\\
 \begin{align}
 x(n)&=x(0)+nd\\
 n&=\frac{x(n)-x(0)}{d}
 \end{align}
-\begin{center}
-For $n \in N$
-\end{center}
 \begin{align}
 x(n)-x(0) &\equiv 0 \pmod{d}
 \end{align}
@@ -146,38 +139,30 @@ On substitutings values\\
 \begin{align}
 -161 &\equiv 2 \pmod{-3}
 \end{align}
-\begin{center}
-As $n \notin N$\\
-\end{center}
 Thus -150 is not a term of the given AP.
 \begin{align}
  \boxed{x(n)=(11-3n)\times u(n)}   
 \end{align}
 
 \begin{align}
-   X(z)&=\frac{11}{1-z^{-1}}-\frac{3z^{-1}}{(1-z^{-1})^2}\hspace{5pt}
-   \text{ROC: $|z|>1$}
+   X(z)&=\frac{11}{1-z^{-1}}-\frac{3z^{-1}}{(1-z^{-1})^2}\quad
+   \text{ROC:} |z|>1
 \end{align}
 
     \begin{table}[h]
     \centering
     
-        \input{tables/table1}\\
+        \input{tables/table1}
         
     \caption{Input parameters}
-    \label{Table 1}
+    \label{tab:Table1}
 \end{table}
 \newpage
 \begin{figure}[h]
   \centering
-  \includegraphics[width=1.2\textwidth]{figs/Figure_1.png}\\
+  \includegraphics[width=1.2\textwidth]{figs/Figure_1.png}
   \captionsetup {justification=centering}
   \caption{Representation of x(n)}
-  \label{Figure_1}
-\end{figure}
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.5\textwidth]{figs/zoomed.jpeg}\\
-  \label{Figure_2}
+  \label{fig:fig1}
 \end{figure}
 \end{document}
