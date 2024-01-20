@@ -24,6 +24,6 @@ def plot_ap_general_term(a, d, start, end):
 
 a = 11
 d = -3
-start_n = 0
+start_n = 50
 end_n = 60
 plot_ap_general_term(a, d, start_n, end_n)
